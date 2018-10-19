@@ -14,11 +14,13 @@ INFILE="$1"
 
 # apply settings
 if [[ $GPU == 1 ]]; then
+	$KINC settings set cuda 0
    $KINC settings set opencl 0:0
    $KINC settings set logging off
 
    NP=1
 else
+	$KINC settings set cuda none
    $KINC settings set opencl none
    $KINC settings set logging off
 
